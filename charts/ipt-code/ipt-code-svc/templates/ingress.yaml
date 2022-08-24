@@ -8,10 +8,11 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - hosts: "myapp.india.com"
+  - host: "myapp.india.com"
     http:
       paths:
       - path: "/"
+        pathType: Prefix
         backend:
           service:
             name: "{{ .Chart.Name }}"
