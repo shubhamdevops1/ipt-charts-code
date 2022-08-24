@@ -9,5 +9,5 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: "{{ trimSuffix .Values.SUFFIX .Chart.Name }}-kd"
+    name: "{{ .Chart.Name }}-kd"
   targetCPUUtilizationPercentage: {{ .Values.AUTOSCALE_CPU_PERCENTAGE | default "50" }}
