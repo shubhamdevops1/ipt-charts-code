@@ -24,10 +24,10 @@ spec:
       restartPolicy: Always
       nodeSelector:
         role: stable
-      tolerations:
-      - key: dedicated
-        operator: Equal
-        value: stable
+      # tolerations:
+      # - key: dedicated
+      #   operator: Equal
+      #   value: stable
       volumes:
       - name: properties-volume
         persistentVolumeClaim:
