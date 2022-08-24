@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: "{{ trimSuffix .Values.SUFFIX .Chart.Name }}"
+  name: "{{ .Chart.Name }}"
   namespace: "{{ .Values.NAMESPACE }}"
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -14,6 +14,6 @@ spec:
       - path: "/"
         backend:
           service:
-            name: "{{ trimSuffix .Values.SUFFIX .Chart.Name }}"
+            name: "{{ .Chart.Name }}"
             port:
               number: 443

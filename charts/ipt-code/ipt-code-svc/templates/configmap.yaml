@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: "{{ trimSuffix .Values.SUFFIX .Chart.Name }}-kcm"
+  name: "{{ .Chart.Name }}-kcm"
   labels:
     environment: "{{ .Values.NAMESPACE }}"
     app: frontend

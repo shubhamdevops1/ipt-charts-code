@@ -1,7 +1,7 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: "{{ trimSuffix .Values.SUFFIX .Chart.Name }}-hpa"
+  name: "{{ .Chart.Name }}-hpa"
   namespace: "{{ .Values.NAMESPACE }}"
 spec:
   maxReplicas: {{ .Values.AUTOSCALE_MAX_REPLICA | default "4" }}

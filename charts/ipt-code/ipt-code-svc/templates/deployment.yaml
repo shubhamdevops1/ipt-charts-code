@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ trimSuffix .Values.SUFFIX .Chart.Name }}-kd"
+  name: "{{ .Chart.Name }}-kd"
   namespace: "{{ .Values.NAMESPACE }}"
   labels:
     environment: "{{ .Values.NAMESPACE }}"
@@ -35,11 +35,11 @@ spec:
       imagePullSecrets:
       - name: registry-secret
       containers:
-      - name: "{{ trimSuffix .Values.SUFFIX .Chart.Name }}-kc"
+      - name: "{{ .Chart.Name }}-kc"
         image: "{{ .Values.DOCKER_APP_IMAGE }}"
         envFrom:
         - configMapRef:
-            name: "{{ trimSuffix .Values.SUFFIX .Chart.Name }}-kcm"
+            name: "{{ .Chart.Name }}-kcm"
         resources:
           requests: 
             memory: {{ .Values.K8S_REQ_MEM }}
