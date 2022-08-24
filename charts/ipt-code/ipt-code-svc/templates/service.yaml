@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: "{{ trimSuffix .Values.Chart.Name }}"
+  name: "{{ .Chart.Name }}"
   namespace: "{{ .Values.NAMESPACE }}"
 spec:
   ports:
