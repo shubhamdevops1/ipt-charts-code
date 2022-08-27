@@ -9,7 +9,7 @@ spec:
   - port: 8080
     targetPort: 8080
     nodePort: 30007
-    protocol: TCP
-    name: https
+    # protocol: TCP
+    #name: https
   selector:
     app: frontend
