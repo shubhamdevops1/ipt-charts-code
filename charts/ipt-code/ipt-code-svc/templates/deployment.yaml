@@ -33,7 +33,7 @@ spec:
         persistentVolumeClaim:
           claimName: pv-vol-claim
       imagePullSecrets:
-      - name: mysecret
+      - name: my-registry
       containers:
       - name: "{{ .Chart.Name }}-kc"
         image: "{{ .Values.DOCKER_APP_IMAGE }}"
